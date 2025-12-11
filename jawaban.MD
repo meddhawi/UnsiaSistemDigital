@@ -4,14 +4,13 @@ Jelaskan empat jenis sistem bilangan (Desimal, Biner, Oktal, Hexadesimal) disert
 - Contoh konversi: 110101 biner → desimal dan hexadecimal
 - Jelaskan mengapa sistem biner digunakan dalam rangkaian digital
 ### Penjelasan: Empat Jenis Sistem Bilangan
-Berdasarkan materi Sesi 1, berikut adalah penjelasannya:
 1.  **Desimal (Basis 10):** Sistem yang kita gunakan sehari-hari. Terdiri dari 10 simbol angka (0-9).
 2.  **Biner (Basis 2):** Sistem bilangan Biner hanya memiliki 2 simbol, yaitu 0 dan 1. Yang merupakan komponen dasar atau bahasa dasar komputer.
 3.  **Oktal (Basis 8):** Sistem bilangan memiliki 8 simbol (0-7). Sering digunakan untuk menyingkat penulisan biner (3 bit biner = 1 digit oktal).
 4.  **Hexadesimal (Basis 16):** Sistem bilangan dengan 16 simbol (0-9 dan A-F). Digunakan untuk representasi data yang lebih ringkas (4 bit biner = 1 digit hexa).
 
 ### A. Konversi Bilangan Desimal: 75
-Berikut adalah cara menghitung konversi angka **75 (desimal)** ke sistem lain:
+Cara menghitung konversi angka **75 (desimal)** ke sistem lain:
 **1. Desimal ke Biner (Membagi dengan 2)**
 Lakukan pembagian berulang dengan 2 dan catat sisa baginya (Remainder) dari bawah ke atas.
 * $75 \div 2 = 37$, sisa **1** 
@@ -42,7 +41,7 @@ $$Hasil: 75_{10} = 4B_{16}$$
 ---
 
 ### B. Konversi Bilangan Biner: 110101
-Berikut adalah cara menghitung konversi **110101 (biner)**:
+Cara menghitung konversi **110101 (biner)**:
 
 **1. Biner ke Desimal**
 Jumlahkan nilai posisi bit yang bernilai 1 (kalkulasi bobot $2^n$).
@@ -165,7 +164,7 @@ stateDiagram-v2
     S2 --> S0
 ```
 
-Rangkaian ini akan berputar dari state 00, ke 01, ke 10, lalu kembali ke 00 setiap kali sinyal clock diberikan.zBerikut adalah rancangan **State Machine** dengan 3 state (S0, S1, S2) yang bekerja sebagai *Counter Modulo-3* (00 $\to$ 01 $\to$ 10 $\to$ 00).
+Rangkaian ini akan berputar dari state 00, ke 01, ke 10, lalu kembali ke 00 setiap kali sinyal clock diberikan.
 1. **Flip-Flop A (FF-A):**
     - **Input J:** Hubungkan ke Output Normal dari FF-B ($Q_B$).
     - **Input K:** Hubungkan ke VCC (Logic 1).
