@@ -1,26 +1,26 @@
-## 1. Penjelasan Sistem Bilangan
-
-Bagian ini menjelaskan empat jenis sistem bilangan dan cara konversinya. Anda bisa membagi tugas ini kepada satu atau dua anggota kelompok untuk dijelaskan di papan tulis atau slide.
-
-### A. Empat Jenis Sistem Bilangan
+# Jawaban Soal Nomor 1
+Jelaskan empat jenis sistem bilangan (Desimal, Biner, Oktal, Hexadesimal) disertai:
+- Contoh konversi: 75 desimal → biner, oktal, hexadecimal
+- Contoh konversi: 110101 biner → desimal dan hexadecimal
+- Jelaskan mengapa sistem biner digunakan dalam rangkaian digital
+### Penjelasan: Empat Jenis Sistem Bilangan
 Berdasarkan materi Sesi 1, berikut adalah penjelasannya:
 1.  **Desimal (Basis 10):** Sistem yang kita gunakan sehari-hari. Terdiri dari 10 simbol angka (0-9).
 2.  **Biner (Basis 2):** Sistem bilangan Biner hanya memiliki 2 simbol, yaitu 0 dan 1. Yang merupakan komponen dasar atau bahasa dasar komputer.
 3.  **Oktal (Basis 8):** Sistem bilangan memiliki 8 simbol (0-7). Sering digunakan untuk menyingkat penulisan biner (3 bit biner = 1 digit oktal).
 4.  **Hexadesimal (Basis 16):** Sistem bilangan dengan 16 simbol (0-9 dan A-F). Digunakan untuk representasi data yang lebih ringkas (4 bit biner = 1 digit hexa).
 
-### B. Konversi Bilangan Desimal: 75
+### A. Konversi Bilangan Desimal: 75
 Berikut adalah cara menghitung konversi angka **75 (desimal)** ke sistem lain:
-
 **1. Desimal ke Biner (Membagi dengan 2)**
 Lakukan pembagian berulang dengan 2 dan catat sisa baginya (Remainder) dari bawah ke atas.
-* $75 \div 2 = 37$, sisa **1** (LSB)
+* $75 \div 2 = 37$, sisa **1** 
 * $37 \div 2 = 18$, sisa **1**
 * $18 \div 2 = 9$, sisa **0**
 * $9 \div 2 = 4$, sisa **1**
 * $4 \div 2 = 2$, sisa **0**
 * $2 \div 2 = 1$, sisa **0**
-* $1 \div 2 = 0$, sisa **1** (MSB)
+* $1 \div 2 = 0$, sisa **1** 
 
 $$Hasil: 75_{10} = 1001011_{2}$$
 
@@ -41,7 +41,7 @@ $$Hasil: 75_{10} = 4B_{16}$$
 
 ---
 
-### C. Konversi Bilangan Biner: 110101
+### B. Konversi Bilangan Biner: 110101
 Berikut adalah cara menghitung konversi **110101 (biner)**:
 
 **1. Biner ke Desimal**
@@ -61,7 +61,7 @@ Kelompokkan 4 bit dari kanan.
 
 $$Hasil: 110101_{2} = 35_{16}$$
 
-### D. Mengapa Menggunakan Sistem Biner?
+### C. Mengapa Menggunakan Sistem Biner?
 Dalam rangkaian digital, sistem biner digunakan karena perangkat elektronik (hardware) lebih mudah dirancang untuk mengenali **2 level tegangan** saja daripada 10 level tegangan.
 * **Logic 0 (Low):** Tegangan 0 - 0.8 V.
 * **Logic 1 (High):** Tegangan 2 - 5 V.
@@ -69,9 +69,12 @@ Sistem ini meminimalkan kesalahan deteksi sinyal dibandingkan jika harus membeda
 
 ---
 
-## 2. Perancangan State Machine (3 State)
-
-Untuk bagian ini, kita akan merancang sebuah *counter* sederhana yang berpindah status dari S0 $\rightarrow$ S1 $\rightarrow$ S2 $\rightarrow$ kembali ke S0. Kita akan menggunakan **D Flip-Flop** karena karakteristiknya yang mudah dipahami ($Output Next = Input D$).
+# Jawaban Soal Nomor 2
+Rancang state machine dengan 3 state (SO, S1, S2) menggunakan salah satu flip-flop: SR, D, T, atau JK.
+Langkah yang harus dilakukan:
+- Buat tabel transisi.
+- Tentukan input FF berdasarkan karakteristiknya.
+- Gambar rangkaian akhir.
 
 ### A. Tabel Transisi (State Transition Table)
 Kita membutuhkan 2 bit ($Q_1$ dan $Q_0$) untuk menampung 3 state (karena $2^2 = 4$ kombinasi, cukup untuk 3 state).
@@ -79,38 +82,99 @@ Kita membutuhkan 2 bit ($Q_1$ dan $Q_0$) untuk menampung 3 state (karena $2^2 = 
 * **S1:** 01
 * **S2:** 10
 
+Tabel ini menggabungkan _Present State_ (kondisi saat ini), _Next State_ (kondisi selanjutnya), dan input eksitasi yang dibutuhkan untuk JK Flip-Flop.
+
+**Logika Eksitasi JK Flip-Flop:**
+- $0 \to 0$: $J=0, K=X$
+- $0 \to 1$: $J=1, K=X$
+- $1 \to 0$: $J=X, K=1$
+- $1 \to 1$: $J=X, K=0$
 
 **Tabel Transisi dan Input Flip-Flop:**
 
-| State Sekarang | Encoding ($Q_1 Q_0$) | State Berikutnya | Encoding ($Q_1^+ Q_0^+$) | Input D Flip-Flop 1 ($D_1$) | Input D Flip-Flop 0 ($D_0$) |
-| :--- | :---: | :--- | :---: | :---: | :---: |
-| **S0** | 0 0 | **S1** | 0 1 | 0 | 1 |
-| **S1** | 0 1 | **S2** | 1 0 | 1 | 0 |
-| **S2** | 1 0 | **S0** | 0 0 | 0 | 0 |
+| **State Sekarang <br>(QA ​QB​)** | **State Berikutnya <br>(QA+​QB+​)** | **Input FF A (JA ​KA​)** | **Input FF B (JB​ KB​)** |
+| -------------------------------- | ----------------------------------- | ------------------------ | ------------------------ |
+| **0 0** (S0)                     | **0 1** (S1)                        | $0 \ X$                  | $1 \ X$                  |
+| **0 1** (S1)                     | **1 0** (S2)                        | $1 \ X$                  | $X \ 1$                  |
+| **1 0** (S2)                     | **0 0** (S0)                        | $X \ 1$                  | $0 \ X$                  |
+| **1 1** (Unused)                 | **X X**                             | $X \ X$                  | $X \ X$                  |
 
-*(Catatan: State 11 adalah kondisi "don't care" atau tidak digunakan).*
+### B. Menentukan Input FF 
+**Persamaan Akhir:**
+1. $J_A = Q_B$
+2. $K_A = 1$
+3. $J_B = \bar{Q}_A$ (Output Q Invers dari FF-A)
+4. $K_B = 1$
 
-### B. Menentukan Input FF (Karakteristik D-FF)
-Pada D Flip-Flop, input $D$ harus sama dengan nilai *Next State* ($Q^+$) yang diinginkan.
+Cara hitung (untuk JA dan JB ditentukan dari loop yang ada angka):
+1. Hitung Input untuk flip flop A (*JA*) = QB
+	- Lihat kolom $J_A$: 0, 1, X, X (berurut dari 00, 01, 10, 11)
+```
+		QB=0      QB=1
+      +-------+-------+
+QA=0  |   0   | [ 1 ] |  <-- Ada angka 1 di sini
+      +-------+-------+      | (Looping Vertikal)
+QA=1  |   X   | [ X ] |  <-- Kita pinjam X ini biar jadi pasangan
+      +-------+-------+
+```
 
-1.  **Persamaan untuk $D_1$ (Input FF 1):**
-    * Lihat kolom $D_1$. Bernilai **1** hanya ketika state sekarang adalah **S1 (0 1)**.
-    * Maka logikanya: **$D_1 = \bar{Q_1} \cdot Q_0$**
-    *(Artinya: $D_1$ aktif jika $Q_1$ Low DAN $Q_0$ High)*.
+  2. Hitung Input untuk flip flop A (*KA*) = 1
+	  - Lihat kolom $J_B$: X X, 1, X
+```
+		QB=0      QB=1
+      +-------+-------+
+QA=0  | [ X ] | [ X ] |
+      +-------+-------+  <-- KITA LINGKARI SEMUA 4 KOTAK
+QA=1  | [ 1 ] | [ X ] |
+      +-------+-------+
+```
 
-2.  **Persamaan untuk $D_0$ (Input FF 0):**
-    * Lihat kolom $D_0$. Bernilai **1** hanya ketika state sekarang adalah **S0 (0 0)**.
-    * Maka logikanya: **$D_0 = \bar{Q_1} \cdot \bar{Q_0}$**
-    *(Artinya: $D_0$ aktif jika $Q_1$ Low DAN $Q_0$ Low)*.
+3. Hitung Input Flip Flop B (JB) = QA
+	- Lihat kolom $J_B$: 1, X, 0, X
+```
+		QB=0      QB=1
+      +-------+-------+
+QA=0  | [ 1 ]---[ X ] |  <-- Looping Horizontal
+      +-------+-------+
+QA=1  |   0   |   X   |
+      +-------+-------+
+```
 
+4. Hitung Input Flip Flop B (KB) = 1
+	- Lihat kolom $K_B$: X, 1, X, X
+```
+		QB=0      QB=1
+      +-------+-------+
+QA=0  | [ X ] | [ 1 ] |
+      +-------+-------+  <-- KITA LINGKARI SEMUA 4 KOTAK LAGI
+QA=1  | [ X ] | [ X ] |
+      +-------+-------+
+```
 ### C. Gambar Rangkaian Akhir (Deskripsi Visual)
-Untuk vlog, Anda bisa menggambar skema berikut di papan tulis atau aplikasi simulasi:
+**Visualisasi Diagram State:**
 
-1.  Siapkan **2 buah D Flip-Flop** (FF1 dan FF0).
-2.  Sambungkan sinyal **Clock** ke kedua FF agar sinkron.
-3.  **Rangkaian Kombinasional Input:**
-    * Untuk input **$D_1$**: Gunakan gerbang **AND**. Masukkan input dari output $\bar{Q}_1$ (Q bar FF1) dan $Q_0$ (Q normal FF0).
-    * Untuk input **$D_0$**: Gunakan gerbang **AND**. Masukkan input dari output $\bar{Q}_1$ (Q bar FF1) dan $\bar{Q}_0$ (Q bar FF0). (Atau gunakan gerbang **NOR** dari input $Q_1$ dan $Q_0$).
-4.  Output rangkaian diambil dari $Q_1$ dan $Q_0$ untuk menunjukkan state S0, S1, atau S2.
+```mermaid
+stateDiagram-v2
+    direction LR
+    S0: 00
+    S1: 01
+    S2: 10
+    
+    S0 --> S1
+    S1 --> S2
+    S2 --> S0
+```
+
+Rangkaian ini akan berputar dari state 00, ke 01, ke 10, lalu kembali ke 00 setiap kali sinyal clock diberikan.zBerikut adalah rancangan **State Machine** dengan 3 state (S0, S1, S2) yang bekerja sebagai *Counter Modulo-3* (00 $\to$ 01 $\to$ 10 $\to$ 00).
+1. **Flip-Flop A (FF-A):**
+    - **Input J:** Hubungkan ke Output Normal dari FF-B ($Q_B$).
+    - **Input K:** Hubungkan ke VCC (Logic 1).
+    - **Clock:** Hubungkan ke sumber detak (Clock).
+        
+2. **Flip-Flop B (FF-B):**
+    - **Input J:** Hubungkan ke Output Invers dari FF-A ($\bar{Q}_A$).
+    - **Input K:** Hubungkan ke VCC (Logic 1).
+    - **Clock:** Hubungkan ke sumber detak (Clock) yang sama dengan FF-A.
+
 
 
