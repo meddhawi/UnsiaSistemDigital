@@ -75,13 +75,13 @@ Langkah yang harus dilakukan:
 - Tentukan input FF berdasarkan karakteristiknya.
 - Gambar rangkaian akhir.
 
-### A. Tabel Transisi (State Transition Table)
-Kita membutuhkan 2 bit ($Q_1$ dan $Q_0$) untuk menampung 3 state (karena $2^2 = 4$ kombinasi, cukup untuk 3 state).
+### A. Buat tabel transisi (State Transition Table)
+Ambil 2 bit ($Q_1$ dan $Q_0$) untuk menampung 3 state (karena $2^2 = 4$ kombinasi, cukup untuk 3 state).
 * **S0:** 00
 * **S1:** 01
 * **S2:** 10
 
-Tabel ini menggabungkan _Present State_ (kondisi saat ini), _Next State_ (kondisi selanjutnya), dan input eksitasi yang dibutuhkan untuk JK Flip-Flop.
+Tabel ini menggabungkan Present State (kondisi saat ini), Next State (kondisi selanjutnya), dan input eksitasi yang dibutuhkan untuk JK Flip-Flop.
 
 **Logika Eksitasi JK Flip-Flop:**
 - $0 \to 0$: $J=0, K=X$
@@ -169,7 +169,6 @@ Rangkaian ini akan berputar dari state 00, ke 01, ke 10, lalu kembali ke 00 seti
     - **Input J:** Hubungkan ke Output Normal dari FF-B ($Q_B$).
     - **Input K:** Hubungkan ke VCC (Logic 1).
     - **Clock:** Hubungkan ke sumber detak (Clock).
-        
 2. **Flip-Flop B (FF-B):**
     - **Input J:** Hubungkan ke Output Invers dari FF-A ($\bar{Q}_A$).
     - **Input K:** Hubungkan ke VCC (Logic 1).
