@@ -1,3 +1,10 @@
+# Anggota Kelompok:
+- Alif Hammam Multazam (240401010043)
+- Abdul Zaki Al-Muttaqin (240401010042)
+- Medhawi (240401010108)
+- Hardhika Helmi (240401010104)
+- Muhammad Shafa (240401010161) 
+
 # Jawaban Soal Nomor 1
 Jelaskan empat jenis sistem bilangan (Desimal, Biner, Oktal, Hexadesimal) disertai:
 - Contoh konversi: 75 desimal → biner, oktal, hexadecimal
