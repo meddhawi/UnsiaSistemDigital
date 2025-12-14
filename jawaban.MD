@@ -44,11 +44,13 @@ $$Hasil: 75_{10} = 4B_{16}$$
 Cara menghitung konversi **110101 (biner)**:
 
 **1. Biner ke Desimal**
-Jumlahkan nilai posisi bit yang bernilai 1 (kalkulasi bobot $2^n$).
+Jumlahkan nilai posisi bit yang bernilai 1 (kalkulasi bobot 2^n).
 
-$$(1 \times 32) + (1 \times 16) + (0 \times 8) + (1 \times 4) + (0 \times 2) + (1 \times 1) \\$$
-$$ = 32 + 16 + 0 + 4 + 0 + 1 \\$$
-$$= 53_{10}$$
+```
+(1 × 32) + (1 × 16) + (0 × 8) + (1 × 4) + (0 × 2) + (1 × 1)
+= 32 + 16 + 0 + 4 + 0 + 1
+= 53₁₀
+```
 
 **2. Biner ke Hexadesimal**
 Kelompokkan 4 bit dari kanan.
